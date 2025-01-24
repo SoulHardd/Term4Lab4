@@ -2,10 +2,10 @@
 
 #ifndef ALGORITHMS_H
 #define ALGORITHMS_H
-#include "data_structures/Graph.h"
+#include "structs/Graph.h"
 #include "sequences/ArraySequence.h"
 #include <queue>
-#include "data_structures/HashTable.h"
+#include "structs/HashTable.h"
 
 template <class T>
 ArraySequence<size_t> BFS(const OrientedGraph<T>& Graph, size_t startId) {

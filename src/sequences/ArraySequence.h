@@ -2,7 +2,7 @@
 #ifndef ARRAYSEQUENCE_H
 #define ARRAYSEQUENCE_H
 #include "Sequence.h"
-#include "../data_structures/DynamicArray.h"
+#include "../structs/DynamicArray.h"
 #include <stdexcept>
 
 using namespace std;
