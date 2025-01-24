@@ -1,21 +1,17 @@
-ccmake_minimum_required(VERSION 3.28)
+cmake_minimum_required(VERSION 3.30)
 project(Term4Lab4)
 
 set(CMAKE_CXX_STANDARD 17)
 
-set(CMAKE_AUTOMOC ON)
-set(CMAKE_AUTORCC ON)
-set(CMAKE_AUTOUIC ON)
 
-set(CMAKE_PREFIX_PATH "D:/qt/6.7.3/lib/cmake")
+set(SFML_STATIC_LIBRARIES TRUE)
+set(SFML_DIR D:/SFML/lib/cmake/SFML)
+find_package(SFML COMPONENTS system window graphics audio network REQUIRED)
 
-find_package(Qt6 REQUIRED COMPONENTS
-        Core
-        Gui
-        Widgets
-)
+include_directories(D:/SFML/include/SFML)
+target_link_libraries(Term4Lab4 sfml-system sfml-window sfml-graphics sfml-audio)
 
-# Define the executable
+
 add_executable(Term4Lab4
         main.cpp
         headers/data_structures/HashTable.h
@@ -24,9 +20,3 @@ add_executable(Term4Lab4
         headers/UI.h
 )
 
-# Link libraries
-target_link_libraries(Term4Lab4 PRIVATE
-        Qt6::Core
-        Qt6::Gui
-        Qt6::Widgets
-)
